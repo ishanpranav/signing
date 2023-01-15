@@ -1,8 +1,9 @@
-$getParams = @{
-    Message  = "Please enter a name for the certificate in the 'User name' text box and a password to encrypt the exported PFX file in the 'Password' text box."
-    UserName = "MySelfSignedCertificate"
-}
-$credential = Get-Credential @getParams
+$message = "Please enter a name for the certificate in the 'User name' textbox.
+
+Do not include spaces or other special characters in the certificate name.
+
+Choose a password to encrypt the private key and enter it in the 'Password' textbox."
+$credential = Get-Credential -Message $message -UserName "MySelfSignedCertificate"
 
 if ($null -eq $credential.Password) {
     exit
