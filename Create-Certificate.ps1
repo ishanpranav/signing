@@ -37,7 +37,6 @@ $exportPfxParams = @{
 }
 
 Export-PfxCertificate @exportPfxParams
-
 Write-Output "
 Exported the public key (*.cer) and public-private key pair (*.pfx) and
 installed the certificate in the $certStoreLocation certificate store.
